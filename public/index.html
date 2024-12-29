@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovators Marketplace</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Innovators Marketplace</div>
+            <div class="nav-links">
+                <a href="#" id="upload-project-link">Upload Project</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects-container">
+            <!-- Projects will be dynamically loaded here -->
+        </section>
+
+        <div id="upload-project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Upload Your Project</h2>
+                <form id="project-upload-form" action="/projects/upload" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="Project Name" required>
+                    <select name="type" required>
+                        <option value="">Select Project Type</option>
+                        <option value="tech">Technology</option>
+                        <option value="art">Art</option>
+                        <option value="design">Design</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea name="description" placeholder="Project Description" required></textarea>
+                    <input type="text" name="innovatorName" placeholder="Your Name" required>
+                    <input type="email" name="innovatorContact" placeholder="Contact Email" required>
+                    <input type="number" name="price" placeholder="Project Price" required>
+                    <label>Project Photos (max 5)</label>
+                    <input type="file" name="projectPhotos" accept="image/*" multiple>
+                    <label>Project Video (optional)</label>
+                    <input type="file" name="projectVideo" accept="video/*">
+                    <button type="submit">Upload Project</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
